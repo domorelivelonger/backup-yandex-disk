@@ -88,7 +88,7 @@ function uploadFile
 }
 
 function backups_list() {
-    curl -s -H "Authorization: OAuth $TOKEN" "https://cloud-api.yandex.net:443/v1/disk/resources?path=app:/&sort=created&limit=100" | tr "{},[]" "\n" | grep "name" |grep mysql | cut -d: -f 2 | tr -d '"' | grep -v "https"
+    curl -s -H "Authorization: OAuth $TOKEN" "https://cloud-api.yandex.net:443/v1/disk/resources?path=app:/&sort=created&limit=100" | tr "{},[]" "\n" | grep "name" |grep files | cut -d: -f 2 | tr -d '"' | grep -v "https"
 }
 
 function backups_count() {
